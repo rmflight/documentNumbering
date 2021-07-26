@@ -1,0 +1,20 @@
+---
+title: "test failure"
+output_format:
+  md_document:
+    keep_md: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+library(documentNumbering)
+knitr::opts_chunk$set(fig.process = dn_modify_path)
+
+figure_count = dn_initialize_counter()
+figure_count = dn_increment_counter(figure_count, "testfigure")
+```
+
+```{r plot_rnorm, couter_identifer = dn_figure_rename(figure_count, "testfigure")}
+plot(rnorm(100), rnorm(100))
+```

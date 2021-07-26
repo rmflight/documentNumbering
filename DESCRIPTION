@@ -1,0 +1,20 @@
+Package: documentNumbering
+Type: Package
+Title: Functions for Numbering in Documents
+Version: 0.0.1
+Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email
+        = "rflight79@gmail.com", role = c("aut", "cre")))
+Description: Provides a framework for numbering in Rmd and other files where
+  automatic numbering normally isn't provided.
+  Rmd -> Word as one example where there normally isn't any automatic figure numbering.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
