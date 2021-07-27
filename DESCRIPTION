@@ -11,6 +11,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
+URL: https://rmflight.github.io/documentNumbering
+BugReports: https://github.com/rmflight/documentNumbering
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,
