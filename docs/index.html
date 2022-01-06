@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,18 +35,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">documentNumbering</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -54,7 +50,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/rmflight/documentNumbering/">
+  <a href="https://github.com/rmflight/documentNumbering/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -71,33 +67,33 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="documentnumbering" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#documentnumbering" class="anchor"></a>documentNumbering</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="documentnumbering">documentNumbering<a class="anchor" aria-label="anchor" href="#documentnumbering"></a>
+</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of documentNumbering is to provide figure and table numbering in Rmd output formats that don’t normally provide figure numbers. This package exists as an alternative to the number referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">bookdown package</a>.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can currently install from <a href="https://github.com/">GitHub</a> with:</p>
+<p>The goal of documentNumbering is to provide figure and table numbering in Rmd output formats that don’t normally provide figure numbers. This package exists as an alternative to the number referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html" class="external-link">bookdown package</a>.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can currently install from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"rmflight/documentNumbering"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"rmflight/documentNumbering"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <p>For basic usage, you initialize any counters you need:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rmflight.github.io/documentNumbering">documentNumbering</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rmflight.github.io/documentNumbering" class="external-link">documentNumbering</a></span><span class="op">)</span>
 
 <span class="va">figure_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_initialize_counter.html">dn_initialize_counter</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">table_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_initialize_counter.html">dn_initialize_counter</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>From there, you can add to each one with identifiers, and then subsequently use it to reference it later:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">figure_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_increment_counter.html">dn_increment_counter</a></span><span class="op">(</span><span class="va">figure_counts</span>, <span class="st">"plot1"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-make_plot-1.png" width="100%"></p>
 <p>And now you can refer to it in the text:</p>
 <p><code>r dn_figure_string(figure_counts, "plot1")</code>. Shows the result of plotting a random normal.</p>
@@ -108,20 +104,20 @@
 <code class="sourceCode R"><span class="fu"><a href="reference/dn_paste_counter.html">dn_paste_counter</a></span><span class="op">(</span><span class="va">figure_counts</span>, <span class="st">"Whoa "</span>, <span class="st">"plot1"</span><span class="op">)</span>
 <span class="co">#&gt; [1] "Whoa 1"</span></code></pre></div>
 </div>
-<div id="disadvantage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#disadvantage" class="anchor"></a>Disadvantage</h2>
+<div class="section level2">
+<h2 id="disadvantage">Disadvantage<a class="anchor" aria-label="anchor" href="#disadvantage"></a>
+</h2>
 <p>You need to define the counter identifier before it can be used. That can be annoying, but in practice it’s not too bad.</p>
 </div>
-<div id="modifying-figure-names" class="section level2">
-<h2 class="hasAnchor">
-<a href="#modifying-figure-names" class="anchor"></a>Modifying Figure Names</h2>
+<div class="section level2">
+<h2 id="modifying-figure-names">Modifying Figure Names<a class="anchor" aria-label="anchor" href="#modifying-figure-names"></a>
+</h2>
 <p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.processor <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.processor <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
 <p>And then to rename the figure file, you set a custom chunk option, <code>counter_identifier</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, counter_identifer = dn_figure_rename(figure_counts, "plot1")}</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
@@ -133,38 +129,50 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/rmflight/documentNumbering/">https://​github.com/​rmflight/​documentNumbering/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/rmflight/documentNumbering">https://​github.com/​rmflight/​documentNumbering</a>
-</li>
+<li><a href="https://github.com/rmflight/documentNumbering/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/rmflight/documentNumbering" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing documentNumbering</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Robert M Flight <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Robert M Flight.</p>
+  <p></p>
+<p>Developed by Robert M Flight.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -172,6 +180,8 @@
 
   
 
+
+  
 
   </body>
 </html>
