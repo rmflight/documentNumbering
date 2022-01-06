@@ -10,8 +10,9 @@ dn_increment_counter(counter, name)
 \item{counter}{the counter to add to}
 
 \item{name}{the name for the value}
-
-\item{return}{counter}
+}
+\value{
+named numeric
 }
 \description{
 given a counter, add to it with a specific name

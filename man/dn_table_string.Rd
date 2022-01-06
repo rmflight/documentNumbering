@@ -4,12 +4,14 @@
 \alias{dn_table_string}
 \title{table string}
 \usage{
-dn_table_string(counter, identifier = NULL)
+dn_table_string(counter, identifier = NULL, supplemental = FALSE)
 }
 \arguments{
 \item{counter}{the counter object}
 
 \item{identifier}{the identifier to get the number for}
+
+\item{supplemental}{should an "S" be added to the identifier}
 }
 \value{
 character

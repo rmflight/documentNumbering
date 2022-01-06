@@ -6,7 +6,7 @@
 #' @param name the name for the value
 #'
 #' @export
-#' @param return counter
+#' @return named numeric
 dn_increment_counter = function(counter, name){
   n_obj = length(counter)
   use_number = max(counter) + 1
@@ -53,11 +53,17 @@ dn_paste_counter = function(counter, pre_string = "", identifier = NULL){
 #'
 #' @param counter the counter object
 #' @param identifier the identifier to get the number for
+#' @param supplemental should an "S" be added to the label first?
 #'
 #' @export
 #' @return character
-dn_figure_string = function(counter, identifier = NULL){
-  dn_paste_counter(counter, "Figure ", identifier)
+dn_figure_string = function(counter, identifier = NULL, supplemental = FALSE){
+  if (supplemental) {
+    fig_str = "Figure S"
+  } else {
+    fig_str = "Figure "
+  }
+  dn_paste_counter(counter, fig_str, identifier)
 }
 
 #' table string
@@ -66,11 +72,17 @@ dn_figure_string = function(counter, identifier = NULL){
 #'
 #' @param counter the counter object
 #' @param identifier the identifier to get the number for
+#' @param supplemental should an "S" be added to the identifier
 #'
 #' @export
 #' @return character
-dn_table_string = function(counter, identifier = NULL){
-  dn_paste_counter(counter, "Table ", identifier)
+dn_table_string = function(counter, identifier = NULL, supplemental = FALSE){
+  if (supplemental) {
+    table_str = "Table S"
+  } else {
+    table_str = "Table"
+  }
+  dn_paste_counter(counter, table_str, identifier)
 }
 
 
@@ -80,11 +92,17 @@ dn_table_string = function(counter, identifier = NULL){
 #'
 #' @param counter the counter object
 #' @param identifier the identifier for the figure
+#' @param supplemental is this a supplemental
 #'
 #' @export
 #' @return character
-dn_figure_rename = function(counter, identifier = NULL){
-  dn_paste_counter(counter, "figure_", identifier)
+dn_figure_rename = function(counter, identifier = NULL, supplemental = FALSE){
+  if (supplemental) {
+    fig_str = "figure_s"
+  } else {
+    fig_str = "figure_"
+  }
+  dn_paste_counter(counter, fig_str, identifier)
 }
 
 #' modify figure path

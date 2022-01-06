@@ -4,12 +4,14 @@
 \alias{dn_figure_string}
 \title{figure string}
 \usage{
-dn_figure_string(counter, identifier = NULL)
+dn_figure_string(counter, identifier = NULL, supplemental = FALSE)
 }
 \arguments{
 \item{counter}{the counter object}
 
 \item{identifier}{the identifier to get the number for}
+
+\item{supplemental}{should an "S" be added to the label first?}
 }
 \value{
 character
