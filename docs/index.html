@@ -4,14 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Provides a framework for numbering in Rmd and other files where
+  automatic numbering normally isnt provided.
+  Rmd -&gt; Word as one example where there normally isnt any automatic figure numbering.">
 <title>Functions for Numbering in Documents • documentNumbering</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Functions for Numbering in Documents">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Functions for Numbering in Documents">
 <meta property="og:description" content="Provides a framework for numbering in Rmd and other files where
   automatic numbering normally isnt provided.
   Rmd -&gt; Word as one example where there normally isnt any automatic figure numbering.">
@@ -20,54 +22,49 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">documentNumbering</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
-      </span>
-    </div>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark"><div class="container">
+    
+    <a class="navbar-brand me-2" href="index.html">documentNumbering</a>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="reference/index.html">Reference</a>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-2">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="news/index.html">Changelog</a>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/rmflight/documentNumbering/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/rmflight/documentNumbering/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+    
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
-
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-<div class="section level1">
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="documentnumbering">documentNumbering<a class="anchor" aria-label="anchor" href="#documentnumbering"></a>
 </h1></div>
 <!-- badges: start -->
@@ -82,16 +79,99 @@
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"rmflight/documentNumbering"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h2>
-<p>For basic usage, you initialize any counters you need:</p>
+<div class="section level3">
+<h3 id="r6-object">R6 Object<a class="anchor" aria-label="anchor" href="#r6-object"></a>
+</h3>
+<p>The easiest way to use this is the actual {R6} object, <code>dn_counter</code> that gets updated, and contains all the information for printing, and which you initialize with whatever values you want for a prefix, and a character to use to replace any spaces in the prefix.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rmflight.github.io/documentNumbering" class="external-link">documentNumbering</a></span><span class="op">)</span>
+<span class="co"># a normal example in a main manuscript</span>
+<span class="va">my_counter</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"Figure "</span>, <span class="st">"_"</span><span class="op">)</span>
+<span class="va">my_counter</span>
+<span class="co">#&gt;   dn_counter: </span>
+<span class="co">#&gt;       prefix: Figure </span>
+<span class="co">#&gt; file_replace: Figure_</span>
+<span class="co">#&gt;        count: </span>
+<span class="co">#&gt;        names: </span>
+<span class="co">#&gt; NULL</span>
+<span class="co"># one where you want an "S" in front of the number</span>
+<span class="va">s_counter</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"Figure S"</span>, <span class="st">"_"</span><span class="op">)</span></code></pre></div>
+<p>When it is initialized, there are no counts, and no names for the counts.</p>
+</div>
+<div class="section level3">
+<h3 id="increment-the-count">Increment the Count<a class="anchor" aria-label="anchor" href="#increment-the-count"></a>
+</h3>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_counter</span><span class="op">$</span><span class="fu">increment</span><span class="op">(</span><span class="st">"descriptive_name"</span><span class="op">)</span>
+<span class="va">my_counter</span>
+<span class="co">#&gt;   dn_counter: </span>
+<span class="co">#&gt;       prefix: Figure </span>
+<span class="co">#&gt; file_replace: Figure_</span>
+<span class="co">#&gt;        count: 1</span>
+<span class="co">#&gt;        names: </span>
+<span class="co">#&gt; [1] "descriptive_name"</span></code></pre></div>
+<p>Here we can see that the count now includes a “1”, and the <code>descriptive_name</code> we supplied.</p>
+</div>
+<div class="section level3">
+<h3 id="paste-in-text">Paste in Text<a class="anchor" aria-label="anchor" href="#paste-in-text"></a>
+</h3>
+<p>Now we want to refer to it in the text, we can do:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_counter</span><span class="op">$</span><span class="fu">label_text</span><span class="op">(</span><span class="st">"descriptive_name"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Figure 1"</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="refer-to-multiple">Refer to Multiple<a class="anchor" aria-label="anchor" href="#refer-to-multiple"></a>
+</h3>
+<p>Often we want to refer to multiple figures at once:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># add another entry first</span>
+<span class="va">my_counter</span><span class="op">$</span><span class="fu">increment</span><span class="op">(</span><span class="st">"descriptive_2"</span><span class="op">)</span>
+<span class="va">my_counter</span><span class="op">$</span><span class="fu">label_text</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"descriptive_name"</span>, <span class="st">"descriptive_2"</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Figure 1, 2"</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="change-name">Change Name<a class="anchor" aria-label="anchor" href="#change-name"></a>
+</h3>
+<p>If we’ve supplied the incorrect name, we can change it if you really want (I doubt this comes up much, but it’s there).</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_counter</span><span class="op">$</span><span class="fu">rename</span><span class="op">(</span><span class="st">"descriptive_name"</span>, <span class="st">"descriptive_1"</span><span class="op">)</span>
+<span class="va">my_counter</span>
+<span class="co">#&gt;   dn_counter: </span>
+<span class="co">#&gt;       prefix: Figure </span>
+<span class="co">#&gt; file_replace: Figure_</span>
+<span class="co">#&gt;        count: 1, 2</span>
+<span class="co">#&gt;        names: </span>
+<span class="co">#&gt; [1] "descriptive_1" "descriptive_2"</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="file-paths">File Paths<a class="anchor" aria-label="anchor" href="#file-paths"></a>
+</h3>
+<p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.processor <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
+<p>And then to rename the figure file, you set a custom chunk option, <code>counter_identifier</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, counter_identifer = my_counter$label_file("descriptive_1")}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
+<p>The figure file will be prepended with <code>Figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
+</div>
+<div class="section level3">
+<h3 id="traditional-functional-r">Traditional Functional R<a class="anchor" aria-label="anchor" href="#traditional-functional-r"></a>
+</h3>
+<p>For basic usage, you initialize any counters you need:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rmflight.github.io/documentNumbering" class="external-link">documentNumbering</a></span><span class="op">)</span>
 
 <span class="va">figure_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_initialize_counter.html">dn_initialize_counter</a></span><span class="op">(</span><span class="op">)</span>
 <span class="va">table_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_initialize_counter.html">dn_initialize_counter</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>From there, you can add to each one with identifiers, and then subsequently use it to reference it later:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">figure_counts</span> <span class="op">=</span> <span class="fu"><a href="reference/dn_increment_counter.html">dn_increment_counter</a></span><span class="op">(</span><span class="va">figure_counts</span>, <span class="st">"plot1"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-make_plot-1.png" width="100%"></p>
@@ -100,39 +180,37 @@
 <p>Figure 1. Shows the result of plotting a random normal.</p>
 <p>For table numbers, you can use <code>dn_table_string</code>.</p>
 <p>Both <code>dn_table_string</code> and <code>dn_figure_string</code> are wrappers around the more general <code>dn_paste_counter</code>, where you can supply any text you want:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/dn_paste_counter.html">dn_paste_counter</a></span><span class="op">(</span><span class="va">figure_counts</span>, <span class="st">"Whoa "</span>, <span class="st">"plot1"</span><span class="op">)</span>
 <span class="co">#&gt; [1] "Whoa 1"</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="disadvantage">Disadvantage<a class="anchor" aria-label="anchor" href="#disadvantage"></a>
-</h2>
+<div class="section level3">
+<h3 id="disadvantage">Disadvantage<a class="anchor" aria-label="anchor" href="#disadvantage"></a>
+</h3>
 <p>You need to define the counter identifier before it can be used. That can be annoying, but in practice it’s not too bad.</p>
 </div>
-<div class="section level2">
-<h2 id="modifying-figure-names">Modifying Figure Names<a class="anchor" aria-label="anchor" href="#modifying-figure-names"></a>
-</h2>
+<div class="section level3">
+<h3 id="modifying-figure-names">Modifying Figure Names<a class="anchor" aria-label="anchor" href="#modifying-figure-names"></a>
+</h3>
 <p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.processor <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
 <p>And then to rename the figure file, you set a custom chunk option, <code>counter_identifier</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, counter_identifer = dn_figure_rename(figure_counts, "plot1")}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, counter_identifer = dn_figure_rename(figure_counts, "plot1")}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
 <p>The figure file will be prepended with <code>figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
+</div>
+  </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/rmflight/documentNumbering/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/rmflight/documentNumbering" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/rmflight/documentNumbering/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -161,25 +239,24 @@
 
 
 
-  </div>
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
+    <footer><div class="pkgdown-footer-left">
   <p></p>
 <p>Developed by Robert M Flight.</p>
 </div>
 
-<div class="pkgdown">
+<div class="pkgdown-footer-right">
   <p></p>
 <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
-
 
   
 

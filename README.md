@@ -21,7 +21,115 @@ You can currently install from [GitHub](https://github.com/) with:
 remotes::install_github("rmflight/documentNumbering")
 ```
 
-## Example
+## Examples
+
+### R6 Object
+
+The easiest way to use this is the actual {R6} object, `dn_counter` that
+gets updated, and contains all the information for printing, and which
+you initialize with whatever values you want for a prefix, and a
+character to use to replace any spaces in the prefix.
+
+``` r
+library(documentNumbering)
+# a normal example in a main manuscript
+my_counter = dn_counter$new("Figure ", "_")
+my_counter
+#>   dn_counter: 
+#>       prefix: Figure 
+#> file_replace: Figure_
+#>        count: 
+#>        names: 
+#> NULL
+# one where you want an "S" in front of the number
+s_counter = dn_counter$new("Figure S", "_")
+```
+
+When it is initialized, there are no counts, and no names for the
+counts.
+
+### Increment the Count
+
+``` r
+my_counter$increment("descriptive_name")
+my_counter
+#>   dn_counter: 
+#>       prefix: Figure 
+#> file_replace: Figure_
+#>        count: 1
+#>        names: 
+#> [1] "descriptive_name"
+```
+
+Here we can see that the count now includes a “1”, and the
+`descriptive_name` we supplied.
+
+### Paste in Text
+
+Now we want to refer to it in the text, we can do:
+
+``` r
+my_counter$label_text("descriptive_name")
+#> [1] "Figure 1"
+```
+
+### Refer to Multiple
+
+Often we want to refer to multiple figures at once:
+
+``` r
+# add another entry first
+my_counter$increment("descriptive_2")
+my_counter$label_text(c("descriptive_name", "descriptive_2"))
+#> [1] "Figure 1, 2"
+```
+
+### Change Name
+
+If we’ve supplied the incorrect name, we can change it if you really
+want (I doubt this comes up much, but it’s there).
+
+``` r
+my_counter$rename("descriptive_name", "descriptive_1")
+my_counter
+#>   dn_counter: 
+#>       prefix: Figure 
+#> file_replace: Figure_
+#>        count: 1, 2
+#>        names: 
+#> [1] "descriptive_1" "descriptive_2"
+```
+
+### File Paths
+
+In addition to just using the counter, there is the ability to modify
+the file names of the figures generated. This is particularly useful if
+you are creating figure files for a manuscript. If you set
+`keep_md: true` in the yaml header, and then you can add a custom figure
+processor:
+
+``` yaml
+output:
+  word_document:
+    keep_md: true
+```
+
+``` r
+knitr::opts_chunk$set(fig.processor = dn_modify_path)
+```
+
+And then to rename the figure file, you set a custom chunk option,
+`counter_identifier`:
+
+    ```{r rename_chunk, counter_identifer = my_counter$label_file("descriptive_1")}
+    plot(rnorm(100), rnorm(100))
+    ```
+
+The figure file will be prepended with `Figure_1_` in the output
+directory that is generated, which makes it much easier to refer to when
+uploading files or sharing them with collaborators.
+
+### Traditional Functional R
 
 For basic usage, you initialize any counters you need:
 
@@ -59,12 +167,12 @@ dn_paste_counter(figure_counts, "Whoa ", "plot1")
 #> [1] "Whoa 1"
 ```
 
-## Disadvantage
+### Disadvantage
 
 You need to define the counter identifier before it can be used. That
 can be annoying, but in practice it’s not too bad.
 
-## Modifying Figure Names
+### Modifying Figure Names
 
 In addition to just using the counter, there is the ability to modify
 the file names of the figures generated. This is particularly useful if
