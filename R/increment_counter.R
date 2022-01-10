@@ -114,22 +114,23 @@ dn_figure_rename = function(counter, identifier = NULL, supplemental = FALSE){
 #' @param options the chunk options
 #'
 #' @description This function uses chunk options to rename the figure file.
-#'   You should add a chunk option called `counter_identifier` that uses
+#'   You should add a chunk option called `dn_id` that uses
 #'   `dn_figure_rename` to get the figure number. See the vignette for an
 #'   example of how to use this in an actual document.
 #'
 #' @export
 #' @return character
 dn_modify_path = function(figure_path, options){
-  if (!any(grepl("counter_identifier", names(options)))) {
-    stop("No chunk option `counter_identifer` provided, stopping!")
-  }
-  figure_identifier = options[["counter_identifier"]]
-  org_dir = dirname(figure_path)
-  file_name = basename(figure_path)
+  if (any(grepl("dn_id", names(options)))) {
+    figure_identifier = options[["dn_id"]]
+    org_dir = dirname(figure_path)
+    file_name = basename(figure_path)
 
-  new_name = paste0(figure_identifier, "_", file_name)
-  new_file = file.path(org_dir, new_name)
-  file.rename(figure_path, new_file)
-  new_file
+    new_name = paste0(figure_identifier, "_", file_name)
+    new_file = file.path(org_dir, new_name)
+    file.rename(figure_path, new_file)
+    return(new_file)
+  } else {
+    return(figure_path)
+  }
 }
