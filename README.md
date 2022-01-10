@@ -119,9 +119,9 @@ knitr::opts_chunk$set(fig.processor = dn_modify_path)
 ```
 
 And then to rename the figure file, you set a custom chunk option,
-`counter_identifier`:
+`dn_id`:
 
-    ```{r rename_chunk, counter_identifer = my_counter$label_file("descriptive_1")}
+    ```{r rename_chunk, dn_id = my_counter$label_file("descriptive_1")}
     plot(rnorm(100), rnorm(100))
     ```
 
@@ -191,9 +191,9 @@ knitr::opts_chunk$set(fig.processor = dn_modify_path)
 ```
 
 And then to rename the figure file, you set a custom chunk option,
-`counter_identifier`:
+`dn_id`:
 
-    ```{r rename_chunk, counter_identifer = dn_figure_rename(figure_counts, "plot1")}
+    ```{r rename_chunk, dn_id = dn_figure_rename(figure_counts, "plot1")}
     plot(rnorm(100), rnorm(100))
     ```
 
