@@ -18,10 +18,10 @@ dn_modify_path = function(figure_path, options){
   if (any(grepl("dn_id", names(options)))) {
     tmp_id = options[["dn_id"]]
     if (inherits(tmp_id, "character")) {
-      message("character")
+      #message("character")
       figure_identifier = options[["dn_id"]]
     } else if (inherits(tmp_id, "dn_counter")) {
-      message("counter")
+      #message("counter")
       figure_identifier = tmp_id$label_file(options[["label"]])
     }
 
