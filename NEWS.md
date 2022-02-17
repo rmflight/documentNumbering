@@ -2,7 +2,7 @@
 
 * Moved from requiring `dn_id` to using the chunk id to get the number out for figure file renumbering.
 * Added a second text argument `prefix2` that is added **all** the time.
-* Added a function `just_number` that provides the number and `prefix2` only, without `prefix`. 
+* Added a function `just_count` that provides the number and `prefix2` only, without `prefix`. 
 This is useful for a few cases, including when doing multiple figure labels.
 * Finally, `label_text` learns to put in a dash instead of just listing them all delimited by comma.
 

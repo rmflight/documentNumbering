@@ -42,7 +42,7 @@ my_counter
 #>        names: 
 #> NULL
 # one where you want an "S" in front of the number
-s_counter = dn_counter$new("Figure S", "_")
+s_counter = dn_counter$new("Figure ", "_", "S")
 ```
 
 When it is initialized, there are no counts, and no names for the
@@ -59,10 +59,21 @@ my_counter
 #>        count: 1
 #>        names: 
 #> [1] "descriptive_name"
+
+s_counter$increment("a_name")
+s_counter
+#>   dn_counter: 
+#>       prefix: Figure 
+#> file_replace: Figure_
+#>        count: S1
+#>        names: 
+#> [1] "a_name"
 ```
 
 Here we can see that the count now includes a “1”, and the
-`descriptive_name` we supplied.
+`descriptive_name` we supplied. In the case of the `s_counter`, we can
+now see that the “S” gets added directly to the counter, and the count
+is actually stored as a character.
 
 ### Paste in Text
 
