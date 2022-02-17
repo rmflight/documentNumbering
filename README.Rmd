@@ -102,12 +102,20 @@ knitr::opts_chunk$set(fig.processor = dn_modify_path)
 And then to rename the figure file, you set a custom chunk option, `dn_id`:
 
 ````
-```{r rename_chunk, dn_id = my_counter$label_file("descriptive_1")}`r ''`
+```{r rename_chunk, dn_id = my_counter$label_file("descriptive_1")} r` ''`
 plot(rnorm(100), rnorm(100))
 ```
 ````
 
 The figure file will be prepended with `Figure_1_` in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.
+
+Alternatively, you can name the chunk with the id you want to use, and give the right counter as the `dn_id`.
+
+````
+```{r descriptive_1, dn_id = my_counter} r` ''`
+plot(rnorm(100), rnorm(100))
+```
+````
 
 ### Traditional Functional R
 

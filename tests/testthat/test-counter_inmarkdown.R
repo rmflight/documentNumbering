@@ -12,9 +12,11 @@ test_that("figure renaming works", {
   final_rmd = file.path(use_dir, "chunk_success.Rmd")
   file.copy("chunk_success.Rmd", final_rmd, overwrite = TRUE)
   final_md = file.path(use_dir, "chunk_success.md")
-  figure_loc = file.path(use_dir, "chunk_success_files", "figure-html", "figure_1_plot_rnorm-1.png")
+  figure_loc = file.path(use_dir, "chunk_success_files", "figure-html", "Figure_1_plot_rnorm-1.png")
+  figure2_loc = file.path(use_dir, "chunk_success_files", "figure-html", "Figure_2_test2-1.png")
   rmarkdown::render(final_rmd, rmarkdown::html_document(keep_md = TRUE))
   expect_true(file.exists(figure_loc))
+  expect_true(file.exists(figure2_loc))
 })
 
 test_that("missing option failes", {

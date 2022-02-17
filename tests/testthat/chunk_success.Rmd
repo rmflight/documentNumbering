@@ -11,10 +11,16 @@ editor_options:
 library(documentNumbering)
 knitr::opts_chunk$set(fig.process = dn_modify_path)
 
-figure_count = dn_initialize_counter()
-figure_count = dn_increment_counter(figure_count, "testfigure")
+figure_count = dn_counter$new()
+figure_count = figure_count$increment("testfigure")
+figure_count = figure_count$increment("test2")
 ```
 
-```{r plot_rnorm, counter_identifier = dn_figure_rename(figure_count, "testfigure")}
+```{r plot_rnorm, dn_id = figure_count$label_file("testfigure")}
 plot(rnorm(100), rnorm(100))
 ```
+
+```{r test2, dn_id = figure_count}
+plot(rnorm(100), rnorm(100))
+```
+

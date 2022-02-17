@@ -11,6 +11,7 @@
 #'   "Figure " or "Table " (note the spaces).}
 #'   \item{space_fill}{The character to use to replace " " if using the prefix as
 #'   part of a file name.}
+#'   \item{prefix2}{A second prefix to add, if you need "S" for supplemental, for example.}
 #' }
 #'
 #' @section Using the counter:
@@ -20,6 +21,8 @@
 #' \code{dn_counter$label_text("name")} returns a text string for use in text,
 #'   "Figure 1" for example.
 #'
+#' \code{dn_counter$just_count("name")} returns just the count as a string, with {prefix2} if it was supplied.
+#'
 #' \code{dn_counter$label_file("name")} returns a text string for use as part of
 #'   a file name, "Figure_1" as an example.
 #'
@@ -27,7 +30,7 @@
 #'   object so that you can refer to the correct one.
 #'
 #' \code{dn_counter} displays the prefix, file replacement text, the current set of
-#'   integers, and their names.
+#'   counts, and their names.
 #'
 #' @name dn_counter
 #' @export
@@ -39,12 +42,12 @@ dn_counter = R6::R6Class("dn_counter", list(
     if (is.null(name)) {
       stop("Please provide a name to increment the count!")
     } else if (name %in% names(self$count)) {
-      stop("name already exists, use something else!")
+      stop("That name already exists, use something else!")
     } else {
       if (length(self$count) == 0) {
-        use_number = 1
+        use_number = paste0(self$prefix2, "1")
       } else {
-        use_number = max(self$count) + 1
+        use_number = paste0(self$prefix2, length(self$count) + 1)
       }
       n_count = length(self$count)
       self$count = c(self$count, use_number)
@@ -70,12 +73,15 @@ dn_counter = R6::R6Class("dn_counter", list(
     if (!any(name %in% names(self$count))) {
       stop(paste0('name "', name, '" not found!'))
     }
-    name_number = self$count[name]
+    name_loc = sort(which(names(self$count) %in% name), decreasing = FALSE)
+    name_number = self$count[name_loc]
 
-    if (length(name_number) > 1) {
+    if (length(name_number) == 2) {
       str_numbers = paste(name_number, collapse = ", ")
-    } else {
+    } else if (length(name_number) == 1) {
       str_numbers = name_number
+    } else if (length(name_number) > 1) {
+      str_numbers = paste0(name_number[1], " - ", name_number[length(name_number)])
     }
 
     use_text = paste(self$prefix, str_numbers, sep = "")
@@ -93,6 +99,13 @@ dn_counter = R6::R6Class("dn_counter", list(
     use_text = paste(self$file_replace, name_number, sep = "")
     return(use_text)
   },
+  just_count = function(name = NULL) {
+    if (!any(name %in% names(self$count))) {
+      stop(paste0('name "', name, '" not found!'))
+    }
+    name_number = self$count[name]
+    return(name_number)
+  },
   print = function(...) {
     cat("  dn_counter: \n")
     cat("      prefix: ", self$prefix, "\n", sep = "")
@@ -103,10 +116,15 @@ dn_counter = R6::R6Class("dn_counter", list(
     invisible(self)
   },
   prefix = "",
+  prefix2 = "",
   file_replace = NULL,
 
-  initialize = function(prefix = "Figure ", space_fill = "_") {
+  initialize = function(prefix = "Figure ",
+                        space_fill = "_",
+                        prefix2 = "") {
     self$prefix = prefix
+    self$prefix2 = prefix2
     self$file_replace = gsub(" ", space_fill, prefix)
+    invisible(self)
   }
 ))

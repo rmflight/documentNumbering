@@ -1,7 +1,7 @@
 Package: documentNumbering
 Type: Package
 Title: Functions for Numbering in Documents
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email
         = "rflight79@gmail.com", role = c("aut", "cre")))
 Description: Provides a framework for numbering in Rmd and other files where

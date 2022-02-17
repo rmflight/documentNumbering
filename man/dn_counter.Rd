@@ -16,6 +16,7 @@ It has the following arguments:
 "Figure " or "Table " (note the spaces).}
 \item{space_fill}{The character to use to replace " " if using the prefix as
 part of a file name.}
+\item{prefix2}{A second prefix to add, if you need "S" for supplemental, for example.}
 }
 }
 
@@ -27,6 +28,8 @@ increases the count and adds the name to the count for recall later.
 \code{dn_counter$label_text("name")} returns a text string for use in text,
 "Figure 1" for example.
 
+\code{dn_counter$just_count("name")} returns just the count as a string, with {prefix2} if it was supplied.
+
 \code{dn_counter$label_file("name")} returns a text string for use as part of
 a file name, "Figure_1" as an example.
 
@@ -34,6 +37,6 @@ a file name, "Figure_1" as an example.
 object so that you can refer to the correct one.
 
 \code{dn_counter} displays the prefix, file replacement text, the current set of
-integers, and their names.
+counts, and their names.
 }
 
