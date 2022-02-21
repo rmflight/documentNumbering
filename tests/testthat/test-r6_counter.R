@@ -20,7 +20,7 @@ test_that("r6 counter works", {
   expect_error(t_count$rename("t3", "t2"))
 
   t_count$increment("t4")
-  expect_equal(t_count$label_text(c("t3", "t2", "t4")), "Figure 1 - 3")
+  expect_equal(t_count$label_text(c("t3", "t2", "t4")), "Figure 1-3")
 
   t2_count = dn_counter$new("Figure ", "_", "S")
   t2_count$increment("t1")
