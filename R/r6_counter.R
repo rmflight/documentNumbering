@@ -81,7 +81,7 @@ dn_counter = R6::R6Class("dn_counter", list(
     } else if (length(name_number) == 1) {
       str_numbers = name_number
     } else if (length(name_number) > 1) {
-      str_numbers = paste0(name_number[1], " - ", name_number[length(name_number)])
+      str_numbers = paste0(name_number[1], "-", name_number[length(name_number)])
     }
 
     use_text = paste(self$prefix, str_numbers, sep = "")
