@@ -6,7 +6,7 @@ test_that("r6 counter works", {
   expect_equal((t_count$count)[2], c("t2" = "2"))
   expect_equal(length(t_count$count), 2)
   expect_equal(t_count$label_text("t2"), "Figure 2")
-  expect_equal(t_count$label_text(c("t1", "t2")), "Figure 1, 2")
+  expect_equal(t_count$label_text(c("t1", "t2")), "Figures 1, 2")
   expect_equal(t_count$label_file("t1"), "Figure_1")
   expect_equal(t_count$just_count("t1"), c("t1" = "1"))
   expect_error(t_count$label_text("t3"))
@@ -20,8 +20,11 @@ test_that("r6 counter works", {
   expect_error(t_count$rename("t3", "t2"))
 
   t_count$increment("t4")
-  expect_equal(t_count$label_text(c("t3", "t2", "t4")), "Figure 1-3")
+  expect_equal(t_count$label_text(c("t3", "t2", "t4")), "Figures 1-3")
+  expect_equal(t_count$label_text(c("t3", "t4")), "Figures 1-3")
 
+  t_count$prefix = "Table "
+  expect_equal(t_count$label_text(c("t3", "t4")), "Tables 1-3")
   t2_count = dn_counter$new("Figure ", "_", "S")
   t2_count$increment("t1")
   t2_count$increment("t2")

@@ -76,15 +76,21 @@ dn_counter = R6::R6Class("dn_counter", list(
     name_loc = sort(which(names(self$count) %in% name), decreasing = FALSE)
     name_number = self$count[name_loc]
 
-    if (length(name_number) == 2) {
+    if ((length(name_number) > 2) || ((name_loc[length(name_loc)] - name_loc[1]) > 1)) {
+      str_numbers = paste0(name_number[1], "-", name_number[length(name_number)])
+    } else if (length(name_number) == 2) {
       str_numbers = paste(name_number, collapse = ", ")
     } else if (length(name_number) == 1) {
       str_numbers = name_number
-    } else if (length(name_number) > 1) {
-      str_numbers = paste0(name_number[1], "-", name_number[length(name_number)])
     }
 
-    use_text = paste(self$prefix, str_numbers, sep = "")
+    if (length(name_number) > 1) {
+      tmp_prefix = gsub("Table", "Tables", self$prefix)
+      tmp_prefix = gsub("Figure", "Figures", tmp_prefix)
+    } else {
+      tmp_prefix = self$prefix
+    }
+    use_text = paste(tmp_prefix, str_numbers, sep = "")
 
     return(use_text)
   },
