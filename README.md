@@ -43,6 +43,13 @@ my_counter
 #> NULL
 # one where you want an "S" in front of the number
 s_counter = dn_counter$new("Figure ", "_", "S")
+s_counter
+#>   dn_counter: 
+#>       prefix: Figure 
+#> file_replace: Figure_
+#>        count: 
+#>        names: 
+#> NULL
 ```
 
 When it is initialized, there are no counts, and no names for the
@@ -70,10 +77,9 @@ s_counter
 #> [1] "a_name"
 ```
 
-Here we can see that the count now includes a “1”, and the
-`descriptive_name` we supplied. In the case of the `s_counter`, we can
-now see that the “S” gets added directly to the counter, and the count
-is actually stored as a character.
+Here we can see that the count now includes a “1”, and In the case of
+the `s_counter`, we can now see that the “S” gets added directly to the
+counter, and the count is actually stored as a character.
 
 ### Paste in Text
 
@@ -92,7 +98,7 @@ Often we want to refer to multiple figures at once:
 # add another entry first
 my_counter$increment("descriptive_2")
 my_counter$label_text(c("descriptive_name", "descriptive_2"))
-#> [1] "Figure 1, 2"
+#> [1] "Figures 1, 2"
 ```
 
 ### Change Name
@@ -126,13 +132,13 @@ output:
 ```
 
 ``` r
-knitr::opts_chunk$set(fig.processor = dn_modify_path)
+knitr::opts_chunk$set(fig.process = dn_modify_path)
 ```
 
-And then to rename the figure file, you set a custom chunk option,
-`dn_id`:
+And then to rename the figure file, you set the chunk **name** to be the
+same as the figure number you want to access:
 
-    ```{r rename_chunk, dn_id = my_counter$label_file("descriptive_1")} r` ''`
+    ```{r descriptive_1, dn_id = my_counter$} r` ''`
     plot(rnorm(100), rnorm(100))
     ```
 
@@ -140,10 +146,11 @@ The figure file will be prepended with `Figure_1_` in the output
 directory that is generated, which makes it much easier to refer to when
 uploading files or sharing them with collaborators.
 
-Alternatively, you can name the chunk with the id you want to use, and
-give the right counter as the `dn_id`.
+Alternatively, if you want a different name for the chunk , you can name
+the chunk whatever and then provide the id using `label_text()` to
+`dn_id`.
 
-    ```{r descriptive_1, dn_id = my_counter} r` ''`
+    ```{r rnorm_plot, dn_id = my_counter$label_text("descriptive_1")} r` ''`
     plot(rnorm(100), rnorm(100))
     ```
 
@@ -215,6 +222,6 @@ And then to rename the figure file, you set a custom chunk option,
     plot(rnorm(100), rnorm(100))
     ```
 
-The figure file will be prepended with `figure_1_` in the output
+The figure file will be prepended with `Figure_1_` in the output
 directory that is generated, which makes it much easier to refer to when
 uploading files or sharing them with collaborators.

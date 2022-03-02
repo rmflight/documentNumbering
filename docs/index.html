@@ -97,7 +97,14 @@
 <span class="co">#&gt;        names: </span>
 <span class="co">#&gt; NULL</span>
 <span class="co"># one where you want an "S" in front of the number</span>
-<span class="va">s_counter</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"Figure "</span>, <span class="st">"_"</span>, <span class="st">"S"</span><span class="op">)</span></code></pre></div>
+<span class="va">s_counter</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"Figure "</span>, <span class="st">"_"</span>, <span class="st">"S"</span><span class="op">)</span>
+<span class="va">s_counter</span>
+<span class="co">#&gt;   dn_counter: </span>
+<span class="co">#&gt;       prefix: Figure </span>
+<span class="co">#&gt; file_replace: Figure_</span>
+<span class="co">#&gt;        count: </span>
+<span class="co">#&gt;        names: </span>
+<span class="co">#&gt; NULL</span></code></pre></div>
 <p>When it is initialized, there are no counts, and no names for the counts.</p>
 </div>
 <div class="section level3">
@@ -121,7 +128,7 @@
 <span class="co">#&gt;        count: S1</span>
 <span class="co">#&gt;        names: </span>
 <span class="co">#&gt; [1] "a_name"</span></code></pre></div>
-<p>Here we can see that the count now includes a “1”, and the <code>descriptive_name</code> we supplied. In the case of the <code>s_counter</code>, we can now see that the “S” gets added directly to the counter, and the count is actually stored as a character.</p>
+<p>Here we can see that the count now includes a “1”, and In the case of the <code>s_counter</code>, we can now see that the “S” gets added directly to the counter, and the count is actually stored as a character.</p>
 </div>
 <div class="section level3">
 <h3 id="paste-in-text">Paste in Text<a class="anchor" aria-label="anchor" href="#paste-in-text"></a>
@@ -139,7 +146,7 @@
 <code class="sourceCode R"><span class="co"># add another entry first</span>
 <span class="va">my_counter</span><span class="op">$</span><span class="fu">increment</span><span class="op">(</span><span class="st">"descriptive_2"</span><span class="op">)</span>
 <span class="va">my_counter</span><span class="op">$</span><span class="fu">label_text</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"descriptive_name"</span>, <span class="st">"descriptive_2"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Figure 1, 2"</span></code></pre></div>
+<span class="co">#&gt; [1] "Figures 1, 2"</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="change-name">Change Name<a class="anchor" aria-label="anchor" href="#change-name"></a>
@@ -163,14 +170,14 @@
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.processor <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
-<p>And then to rename the figure file, you set a custom chunk option, <code>dn_id</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, dn_id = my_counter$label_file("descriptive_1")} r</span><span class="st">`</span> <span class="st">''`</span></span>
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.process <span class="op">=</span> <span class="va">dn_modify_path</span><span class="op">)</span></code></pre></div>
+<p>And then to rename the figure file, you set the chunk <strong>name</strong> to be the same as the figure number you want to access:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r descriptive_1, dn_id = my_counter$} r</span><span class="st">`</span> <span class="st">''`</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
 <p>The figure file will be prepended with <code>Figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
-<p>Alternatively, you can name the chunk with the id you want to use, and give the right counter as the <code>dn_id</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r descriptive_1, dn_id = my_counter} r</span><span class="st">`</span> <span class="st">''`</span></span>
+<p>Alternatively, if you want a different name for the chunk , you can name the chunk whatever and then provide the id using <code>label_text()</code> to <code>dn_id</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rnorm_plot, dn_id = my_counter$label_text("descriptive_1")} r</span><span class="st">`</span> <span class="st">''`</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
 </div>
@@ -215,7 +222,7 @@
 <div class="sourceCode" id="cb16"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r rename_chunk, dn_id = dn_figure_rename(figure_counts, "plot1")}</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="at">plot(rnorm(100), rnorm(100))</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span></code></pre></div>
-<p>The figure file will be prepended with <code>figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
+<p>The figure file will be prepended with <code>Figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
 </div>
 </div>
 </div>
