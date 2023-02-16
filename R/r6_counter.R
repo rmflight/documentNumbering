@@ -40,18 +40,17 @@ dn_counter = R6::R6Class("dn_counter", list(
   count = vector("numeric", length = 0),
   increment = function(name = NULL){
     if (is.null(name)) {
-      stop("Please provide a name to increment the count!")
-    } else if (name %in% names(self$count)) {
+      stop("Please provide at least 1 name to increment the count!")
+    } else if (any(name %in% names(self$count))) {
       stop("That name already exists, use something else!")
     } else {
-      if (length(self$count) == 0) {
-        use_number = paste0(self$prefix2, "1")
-      } else {
-        use_number = paste0(self$prefix2, length(self$count) + 1)
-      }
+      n_names = length(name)
       n_count = length(self$count)
+
+      use_number = paste0(self$prefix2, n_count + seq_len(n_names))
+
       self$count = c(self$count, use_number)
-      names(self$count)[n_count + 1] = name
+      names(self$count)[seq(n_count + 1, n_count + n_names)] = name
       invisible(self)
     }
   },
