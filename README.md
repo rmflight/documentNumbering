@@ -158,21 +158,26 @@ figure_count$increment(c("plot", "plot2"))
 And then to rename the figure file, you set the chunk **label** to be
 the same as the figure number you want to access:
 
+```` markdown
+```{r}
+#| label: plot
+plot(rnorm(100), rnorm(100))
+```
+````
 
-    ```r
-    plot(rnorm(100), rnorm(100))
-    ```
-
-    <img src="man/figures/Figure_1-README-plot-1.png" width="100%" />
+<img src="man/figures/Figure_1-README-plot-1.png"
+style="width:100.0%" />
 
 Alternatively:
 
+```` markdown
+```{r plot2}
+plot(rnorm(100), rnorm(100))
+```
+````
 
-    ```r
-    plot(rnorm(100), rnorm(100))
-    ```
-
-    <img src="man/figures/Figure_2-README-plot2-1.png" width="100%" />
+<img src="man/figures/Figure_2-README-plot2-1.png"
+style="width:100.0%" />
 
 The figure file will be prepended with `Figure_1-` in the output
 directory that is generated, which makes it much easier to refer to when
