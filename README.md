@@ -6,10 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of documentNumbering is to provide figure and table numbering
-in Rmd output formats that don’t normally provide figure numbers. This
-package exists as an alternative to the number referencing provided by
-the [bookdown
+The goal of `documentNumbering` is to provide figure and table numbering
+in Rmd / qmd output formats that don’t normally provide figure numbers.
+This package exists as an alternative to the number referencing provided
+by the [bookdown
 package](https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html).
 
 ## Installation
@@ -25,10 +25,10 @@ remotes::install_github("rmflight/documentNumbering")
 
 ### R6 Object
 
-The easiest way to use this is the actual {R6} object, `dn_counter` that
-gets updated, and contains all the information for printing, and which
-you initialize with whatever values you want for a prefix, and a
-character to use to replace any spaces in the prefix.
+The way to use this is the actual {R6} object, `dn_counter` that gets
+updated, and contains all the information for printing, and which you
+initialize with whatever values you want for a prefix, and a character
+to use to replace any spaces in the prefix.
 
 ``` r
 library(documentNumbering)
@@ -81,6 +81,13 @@ Here we can see that the count now includes a “1”, and In the case of
 the `s_counter`, we can now see that the “S” gets added directly to the
 counter, and the count is actually stored as a character.
 
+We can also add multiple items at a time:
+
+``` r
+my_counter$increment(c("b_name",
+                       "c_name"))
+```
+
 ### Paste in Text
 
 Now we want to refer to it in the text, we can do:
@@ -98,7 +105,7 @@ Often we want to refer to multiple figures at once:
 # add another entry first
 my_counter$increment("descriptive_2")
 my_counter$label_text(c("descriptive_name", "descriptive_2"))
-#> [1] "Figures 1, 2"
+#> [1] "Figures 1-4"
 ```
 
 ### Change Name
@@ -112,9 +119,9 @@ my_counter
 #>   dn_counter: 
 #>       prefix: Figure 
 #> file_replace: Figure_
-#>        count: 1, 2
+#>        count: 1, 2, 3, 4
 #>        names: 
-#> [1] "descriptive_1" "descriptive_2"
+#> [1] "descriptive_1" "b_name"        "c_name"        "descriptive_2"
 ```
 
 ### File Paths
@@ -123,7 +130,10 @@ In addition to just using the counter, there is the ability to modify
 the file names of the figures generated. This is particularly useful if
 you are creating figure files for a manuscript. If you set
 `keep_md: true` in the yaml header, and then you can add a custom figure
-processor:
+processor, `modify_path`, which is one of the functions in the
+`dn_counter` object you instantiate:
+
+For `rmarkdown`:
 
 ``` yaml
 output:
@@ -131,97 +141,39 @@ output:
     keep_md: true
 ```
 
-``` r
-knitr::opts_chunk$set(fig.process = dn_modify_path)
-```
-
-And then to rename the figure file, you set the chunk **name** to be the
-same as the figure number you want to access:
-
-    ```{r descriptive_1, dn_id = my_counter$} r` ''`
-    plot(rnorm(100), rnorm(100))
-    ```
-
-The figure file will be prepended with `Figure_1_` in the output
-directory that is generated, which makes it much easier to refer to when
-uploading files or sharing them with collaborators.
-
-Alternatively, if you want a different name for the chunk , you can name
-the chunk whatever and then provide the id using `label_text()` to
-`dn_id`.
-
-    ```{r rnorm_plot, dn_id = my_counter$label_text("descriptive_1")} r` ''`
-    plot(rnorm(100), rnorm(100))
-    ```
-
-### Traditional Functional R
-
-For basic usage, you initialize any counters you need:
-
-``` r
-library(documentNumbering)
-
-figure_counts = dn_initialize_counter()
-table_counts = dn_initialize_counter()
-```
-
-From there, you can add to each one with identifiers, and then
-subsequently use it to reference it later:
-
-``` r
-figure_counts = dn_increment_counter(figure_counts, "plot1")
-plot(rnorm(100), rnorm(100))
-```
-
-<img src="man/figures/README-make_plot-1.png" width="100%" />
-
-And now you can refer to it in the text:
-
-`r dn_figure_string(figure_counts, "plot1")`. Shows the result of
-plotting a random normal.
-
-Figure 1. Shows the result of plotting a random normal.
-
-For table numbers, you can use `dn_table_string`.
-
-Both `dn_table_string` and `dn_figure_string` are wrappers around the
-more general `dn_paste_counter`, where you can supply any text you want:
-
-``` r
-dn_paste_counter(figure_counts, "Whoa ", "plot1")
-#> [1] "Whoa 1"
-```
-
-### Disadvantage
-
-You need to define the counter identifier before it can be used. That
-can be annoying, but in practice it’s not too bad.
-
-### Modifying Figure Names
-
-In addition to just using the counter, there is the ability to modify
-the file names of the figures generated. This is particularly useful if
-you are creating figure files for a manuscript. If you set
-`keep_md: true` in the yaml header, and then you can add a custom figure
-processor:
+For `quarto`:
 
 ``` yaml
 output:
-  word_document:
-    keep_md: true
+  docx:
+    keep-md: true
 ```
 
 ``` r
-knitr::opts_chunk$set(fig.processor = dn_modify_path)
+figure_count = dn_counter$new()
+knitr::opts_chunk$set(fig.process = figure_count$modify_path)
+figure_count$increment(c("plot", "plot2"))
 ```
 
-And then to rename the figure file, you set a custom chunk option,
-`dn_id`:
+And then to rename the figure file, you set the chunk **label** to be
+the same as the figure number you want to access:
 
-    ```{r rename_chunk, dn_id = dn_figure_rename(figure_counts, "plot1")}
+
+    ```r
     plot(rnorm(100), rnorm(100))
     ```
 
-The figure file will be prepended with `Figure_1_` in the output
+    <img src="man/figures/Figure_1-README-plot-1.png" width="100%" />
+
+Alternatively:
+
+
+    ```r
+    plot(rnorm(100), rnorm(100))
+    ```
+
+    <img src="man/figures/Figure_2-README-plot2-1.png" width="100%" />
+
+The figure file will be prepended with `Figure_1-` in the output
 directory that is generated, which makes it much easier to refer to when
 uploading files or sharing them with collaborators.

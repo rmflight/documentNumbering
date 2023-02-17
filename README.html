@@ -9,17 +9,593 @@
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="data:text/css,%0A%40font%2Dface%20%7B%0Afont%2Dfamily%3A%20octicons%2Dlink%3B%0Asrc%3A%20url%28data%3Afont%2Fwoff%3Bcharset%3Dutf%2D8%3Bbase64%2Cd09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM%2B8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB%2FaFGpk3jaTY6xa8JAGMW%2FO62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v%2Bk%2F0an2i%2BitHDw3v2%2B9%2BDBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3%2FI7AtxEJLtzzuZfI%2BVVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy%2FLt7Kc%2B0vWY%2FgAgIIEqAN9we0pwKXreiMasxvabDQMM4riO%2BqxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw%2Bymhce7vwM9jSqO8JyVd5RH9gyTt2%2BJ%2FyUmYlIR0s04n6%2B7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv%2FocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi%2BW2%2BMjCzMIDApSwvXzC97Z4Ig8N%2FBxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh%2F8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT%2BAEjAwuDFpBmA9KMDEwMCh9i%2Fv8H8sH0%2F4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9%2FlqYwOGZxeUelN2U2R6%2BcArgtCJpauW7UQBqnFkUsjAY%2FkOU1cP%2BDAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl%2BvvmM%2FbyA48e6tWrKArm4ZJlCbdsrxksL1AwWn%2FyBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO%2F%2FsdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd%2F89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF%2B9JOS0nbaaYDCQfwCJ7Au3AHj%2BLO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm%2BEBXuAbHmIMSRMs%2B4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL%2BhD7C1xoaHeLJSEao0FEW14ckxC%2BTU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13%2F%2Blm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl%2B9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O%2FAdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB%2F%2F%2FAA8AAQAAAAAAAAAAAAAAAAABAAAAAA%3D%3D%29%20format%28%27woff%27%29%3B%0A%7D%0Abody%20%7B%0A%2Dwebkit%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%0Atext%2Dsize%2Dadjust%3A%20100%25%3B%0Acolor%3A%20%23333%3B%0Afont%2Dfamily%3A%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20%22Segoe%20UI%22%2C%20Arial%2C%20freesans%2C%20sans%2Dserif%2C%20%22Apple%20Color%20Emoji%22%2C%20%22Segoe%20UI%20Emoji%22%2C%20%22Segoe%20UI%20Symbol%22%3B%0Afont%2Dsize%3A%2016px%3B%0Aline%2Dheight%3A%201%2E6%3B%0Aword%2Dwrap%3A%20break%2Dword%3B%0A%7D%0Aa%20%7B%0Abackground%2Dcolor%3A%20transparent%3B%0A%7D%0Aa%3Aactive%2C%0Aa%3Ahover%20%7B%0Aoutline%3A%200%3B%0A%7D%0Astrong%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Ah1%20%7B%0Afont%2Dsize%3A%202em%3B%0Amargin%3A%200%2E67em%200%3B%0A%7D%0Aimg%20%7B%0Aborder%3A%200%3B%0A%7D%0Ahr%20%7B%0Abox%2Dsizing%3A%20content%2Dbox%3B%0Aheight%3A%200%3B%0A%7D%0Apre%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0Acode%2C%0Akbd%2C%0Apre%20%7B%0Afont%2Dfamily%3A%20monospace%2C%20monospace%3B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Ainput%20%7B%0Acolor%3A%20inherit%3B%0Afont%3A%20inherit%3B%0Amargin%3A%200%3B%0A%7D%0Ahtml%20input%5Bdisabled%5D%20%7B%0Acursor%3A%20default%3B%0A%7D%0Ainput%20%7B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ainput%5Btype%3D%22checkbox%22%5D%20%7B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0Apadding%3A%200%3B%0A%7D%0Atable%20%7B%0Aborder%2Dcollapse%3A%20collapse%3B%0Aborder%2Dspacing%3A%200%3B%0A%7D%0Atd%2C%0Ath%20%7B%0Apadding%3A%200%3B%0A%7D%0A%2A%20%7B%0Abox%2Dsizing%3A%20border%2Dbox%3B%0A%7D%0Ainput%20%7B%0Afont%3A%2013px%20%2F%201%2E4%20Helvetica%2C%20arial%2C%20nimbussansl%2C%20liberationsans%2C%20freesans%2C%20clean%2C%20sans%2Dserif%2C%20%22Apple%20Color%20Emoji%22%2C%20%22Segoe%20UI%20Emoji%22%2C%20%22Segoe%20UI%20Symbol%22%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%234078c0%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%2C%0Aa%3Aactive%20%7B%0Atext%2Ddecoration%3A%20underline%3B%0A%7D%0Ahr%20%7B%0Aheight%3A%200%3B%0Amargin%3A%2015px%200%3B%0Aoverflow%3A%20hidden%3B%0Abackground%3A%20transparent%3B%0Aborder%3A%200%3B%0Aborder%2Dbottom%3A%201px%20solid%20%23ddd%3B%0A%7D%0Ahr%3Abefore%20%7B%0Adisplay%3A%20table%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Ahr%3Aafter%20%7B%0Adisplay%3A%20table%3B%0Aclear%3A%20both%3B%0Acontent%3A%20%22%22%3B%0A%7D%0Ah1%2C%0Ah2%2C%0Ah3%2C%0Ah4%2C%0Ah5%2C%0Ah6%20%7B%0Amargin%2Dtop%3A%2015px%3B%0Amargin%2Dbottom%3A%2015px%3B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Ah1%20%7B%0Afont%2Dsize%3A%2030px%3B%0A%7D%0Ah2%20%7B%0Afont%2Dsize%3A%2021px%3B%0A%7D%0Ah3%20%7B%0Afont%2Dsize%3A%2016px%3B%0A%7D%0Ah4%20%7B%0Afont%2Dsize%3A%2014px%3B%0A%7D%0Ah5%20%7B%0Afont%2Dsize%3A%2012px%3B%0A%7D%0Ah6%20%7B%0Afont%2Dsize%3A%2011px%3B%0A%7D%0Ablockquote%20%7B%0Amargin%3A%200%3B%0A%7D%0Aul%2C%0Aol%20%7B%0Apadding%3A%200%3B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Aol%20ol%2C%0Aul%20ol%20%7B%0Alist%2Dstyle%2Dtype%3A%20lower%2Droman%3B%0A%7D%0Aul%20ul%20ol%2C%0Aul%20ol%20ol%2C%0Aol%20ul%20ol%2C%0Aol%20ol%20ol%20%7B%0Alist%2Dstyle%2Dtype%3A%20lower%2Dalpha%3B%0A%7D%0Add%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0Afont%2Dsize%3A%2012px%3B%0A%7D%0Apre%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0Afont%3A%2012px%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0A%7D%0A%2Eselect%3A%3A%2Dms%2Dexpand%20%7B%0Aopacity%3A%200%3B%0A%7D%0A%2Eocticon%20%7B%0Afont%3A%20normal%20normal%20normal%2016px%2F1%20octicons%2Dlink%3B%0Adisplay%3A%20inline%2Dblock%3B%0Atext%2Ddecoration%3A%20none%3B%0Atext%2Drendering%3A%20auto%3B%0A%2Dwebkit%2Dfont%2Dsmoothing%3A%20antialiased%3B%0A%2Dmoz%2Dosx%2Dfont%2Dsmoothing%3A%20grayscale%3B%0A%2Dwebkit%2Duser%2Dselect%3A%20none%3B%0A%2Dmoz%2Duser%2Dselect%3A%20none%3B%0A%2Dms%2Duser%2Dselect%3A%20none%3B%0Auser%2Dselect%3A%20none%3B%0A%7D%0A%2Eocticon%2Dlink%3Abefore%20%7B%0Acontent%3A%20%27%5Cf05c%27%3B%0A%7D%0A%2Emarkdown%2Dbody%3Abefore%20%7B%0Adisplay%3A%20table%3B%0Acontent%3A%20%22%22%3B%0A%7D%0A%2Emarkdown%2Dbody%3Aafter%20%7B%0Adisplay%3A%20table%3B%0Aclear%3A%20both%3B%0Acontent%3A%20%22%22%3B%0A%7D%0A%2Emarkdown%2Dbody%3E%2A%3Afirst%2Dchild%20%7B%0Amargin%2Dtop%3A%200%20%21important%3B%0A%7D%0A%2Emarkdown%2Dbody%3E%2A%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%20%21important%3B%0A%7D%0Aa%3Anot%28%5Bhref%5D%29%20%7B%0Acolor%3A%20inherit%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0A%2Eanchor%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%2Dright%3A%202px%3B%0Amargin%2Dleft%3A%20%2D18px%3B%0A%7D%0A%2Eanchor%3Afocus%20%7B%0Aoutline%3A%20none%3B%0A%7D%0Ah1%2C%0Ah2%2C%0Ah3%2C%0Ah4%2C%0Ah5%2C%0Ah6%20%7B%0Amargin%2Dtop%3A%201em%3B%0Amargin%2Dbottom%3A%2016px%3B%0Afont%2Dweight%3A%20bold%3B%0Aline%2Dheight%3A%201%2E4%3B%0A%7D%0Ah1%20%2Eocticon%2Dlink%2C%0Ah2%20%2Eocticon%2Dlink%2C%0Ah3%20%2Eocticon%2Dlink%2C%0Ah4%20%2Eocticon%2Dlink%2C%0Ah5%20%2Eocticon%2Dlink%2C%0Ah6%20%2Eocticon%2Dlink%20%7B%0Acolor%3A%20%23000%3B%0Avertical%2Dalign%3A%20middle%3B%0Avisibility%3A%20hidden%3B%0A%7D%0Ah1%3Ahover%20%2Eanchor%2C%0Ah2%3Ahover%20%2Eanchor%2C%0Ah3%3Ahover%20%2Eanchor%2C%0Ah4%3Ahover%20%2Eanchor%2C%0Ah5%3Ahover%20%2Eanchor%2C%0Ah6%3Ahover%20%2Eanchor%20%7B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Ah1%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Ah2%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Ah3%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Ah4%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Ah5%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%2C%0Ah6%3Ahover%20%2Eanchor%20%2Eocticon%2Dlink%20%7B%0Avisibility%3A%20visible%3B%0A%7D%0Ah1%20%7B%0Apadding%2Dbottom%3A%200%2E3em%3B%0Afont%2Dsize%3A%202%2E25em%3B%0Aline%2Dheight%3A%201%2E2%3B%0Aborder%2Dbottom%3A%201px%20solid%20%23eee%3B%0A%7D%0Ah1%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%3B%0A%7D%0Ah2%20%7B%0Apadding%2Dbottom%3A%200%2E3em%3B%0Afont%2Dsize%3A%201%2E75em%3B%0Aline%2Dheight%3A%201%2E225%3B%0Aborder%2Dbottom%3A%201px%20solid%20%23eee%3B%0A%7D%0Ah2%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%3B%0A%7D%0Ah3%20%7B%0Afont%2Dsize%3A%201%2E5em%3B%0Aline%2Dheight%3A%201%2E43%3B%0A%7D%0Ah3%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E2%3B%0A%7D%0Ah4%20%7B%0Afont%2Dsize%3A%201%2E25em%3B%0A%7D%0Ah4%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E2%3B%0A%7D%0Ah5%20%7B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Ah5%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Ah6%20%7B%0Afont%2Dsize%3A%201em%3B%0Acolor%3A%20%23777%3B%0A%7D%0Ah6%20%2Eanchor%20%7B%0Aline%2Dheight%3A%201%2E1%3B%0A%7D%0Ap%2C%0Ablockquote%2C%0Aul%2C%0Aol%2C%0Adl%2C%0Atable%2C%0Apre%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0Ahr%20%7B%0Aheight%3A%204px%3B%0Apadding%3A%200%3B%0Amargin%3A%2016px%200%3B%0Abackground%2Dcolor%3A%20%23e7e7e7%3B%0Aborder%3A%200%20none%3B%0A%7D%0Aul%2C%0Aol%20%7B%0Apadding%2Dleft%3A%202em%3B%0A%7D%0Aul%20ul%2C%0Aul%20ol%2C%0Aol%20ol%2C%0Aol%20ul%20%7B%0Amargin%2Dtop%3A%200%3B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Ali%3Ep%20%7B%0Amargin%2Dtop%3A%2016px%3B%0A%7D%0Adl%20%7B%0Apadding%3A%200%3B%0A%7D%0Adl%20dt%20%7B%0Apadding%3A%200%3B%0Amargin%2Dtop%3A%2016px%3B%0Afont%2Dsize%3A%201em%3B%0Afont%2Dstyle%3A%20italic%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Adl%20dd%20%7B%0Apadding%3A%200%2016px%3B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0Ablockquote%20%7B%0Apadding%3A%200%2015px%3B%0Acolor%3A%20%23777%3B%0Aborder%2Dleft%3A%204px%20solid%20%23ddd%3B%0A%7D%0Ablockquote%3E%3Afirst%2Dchild%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Ablockquote%3E%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Atable%20%7B%0Adisplay%3A%20block%3B%0Awidth%3A%20100%25%3B%0Aoverflow%3A%20auto%3B%0Aword%2Dbreak%3A%20normal%3B%0Aword%2Dbreak%3A%20keep%2Dall%3B%0A%7D%0Atable%20th%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Atable%20th%2C%0Atable%20td%20%7B%0Apadding%3A%206px%2013px%3B%0Aborder%3A%201px%20solid%20%23ddd%3B%0A%7D%0Atable%20tr%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Aborder%2Dtop%3A%201px%20solid%20%23ccc%3B%0A%7D%0Atable%20tr%3Anth%2Dchild%282n%29%20%7B%0Abackground%2Dcolor%3A%20%23f8f8f8%3B%0A%7D%0Aimg%20%7B%0Amax%2Dwidth%3A%20100%25%3B%0Abox%2Dsizing%3A%20content%2Dbox%3B%0Abackground%2Dcolor%3A%20%23fff%3B%0A%7D%0Acode%20%7B%0Apadding%3A%200%3B%0Apadding%2Dtop%3A%200%2E2em%3B%0Apadding%2Dbottom%3A%200%2E2em%3B%0Amargin%3A%200%3B%0Afont%2Dsize%3A%2085%25%3B%0Abackground%2Dcolor%3A%20rgba%280%2C0%2C0%2C0%2E04%29%3B%0Aborder%2Dradius%3A%203px%3B%0A%7D%0Acode%3Abefore%2C%0Acode%3Aafter%20%7B%0Aletter%2Dspacing%3A%20%2D0%2E2em%3B%0Acontent%3A%20%22%5C00a0%22%3B%0A%7D%0Apre%3Ecode%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Afont%2Dsize%3A%20100%25%3B%0Aword%2Dbreak%3A%20normal%3B%0Awhite%2Dspace%3A%20pre%3B%0Abackground%3A%20transparent%3B%0Aborder%3A%200%3B%0A%7D%0A%2Ehighlight%20%7B%0Amargin%2Dbottom%3A%2016px%3B%0A%7D%0A%2Ehighlight%20pre%2C%0Apre%20%7B%0Apadding%3A%2016px%3B%0Aoverflow%3A%20auto%3B%0Afont%2Dsize%3A%2085%25%3B%0Aline%2Dheight%3A%201%2E45%3B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0A%7D%0A%2Ehighlight%20pre%20%7B%0Amargin%2Dbottom%3A%200%3B%0Aword%2Dbreak%3A%20normal%3B%0A%7D%0Apre%20%7B%0Aword%2Dwrap%3A%20normal%3B%0A%7D%0Apre%20code%20%7B%0Adisplay%3A%20inline%3B%0Amax%2Dwidth%3A%20initial%3B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Aoverflow%3A%20initial%3B%0Aline%2Dheight%3A%20inherit%3B%0Aword%2Dwrap%3A%20normal%3B%0Abackground%2Dcolor%3A%20transparent%3B%0Aborder%3A%200%3B%0A%7D%0Apre%20code%3Abefore%2C%0Apre%20code%3Aafter%20%7B%0Acontent%3A%20normal%3B%0A%7D%0Akbd%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%3A%203px%205px%3B%0Afont%2Dsize%3A%2011px%3B%0Aline%2Dheight%3A%2010px%3B%0Acolor%3A%20%23555%3B%0Avertical%2Dalign%3A%20middle%3B%0Abackground%2Dcolor%3A%20%23fcfcfc%3B%0Aborder%3A%20solid%201px%20%23ccc%3B%0Aborder%2Dbottom%2Dcolor%3A%20%23bbb%3B%0Aborder%2Dradius%3A%203px%3B%0Abox%2Dshadow%3A%20inset%200%20%2D1px%200%20%23bbb%3B%0A%7D%0A%2Epl%2Dc%20%7B%0Acolor%3A%20%23969896%3B%0A%7D%0A%2Epl%2Dc1%2C%0A%2Epl%2Ds%20%2Epl%2Dv%20%7B%0Acolor%3A%20%230086b3%3B%0A%7D%0A%2Epl%2De%2C%0A%2Epl%2Den%20%7B%0Acolor%3A%20%23795da3%3B%0A%7D%0A%2Epl%2Ds%20%2Epl%2Ds1%2C%0A%2Epl%2Dsmi%20%7B%0Acolor%3A%20%23333%3B%0A%7D%0A%2Epl%2Dent%20%7B%0Acolor%3A%20%2363a35c%3B%0A%7D%0A%2Epl%2Dk%20%7B%0Acolor%3A%20%23a71d5d%3B%0A%7D%0A%2Epl%2Dpds%2C%0A%2Epl%2Ds%2C%0A%2Epl%2Ds%20%2Epl%2Dpse%20%2Epl%2Ds1%2C%0A%2Epl%2Dsr%2C%0A%2Epl%2Dsr%20%2Epl%2Dcce%2C%0A%2Epl%2Dsr%20%2Epl%2Dsra%2C%0A%2Epl%2Dsr%20%2Epl%2Dsre%20%7B%0Acolor%3A%20%23183691%3B%0A%7D%0A%2Epl%2Dv%20%7B%0Acolor%3A%20%23ed6a43%3B%0A%7D%0A%2Epl%2Did%20%7B%0Acolor%3A%20%23b52a1d%3B%0A%7D%0A%2Epl%2Dii%20%7B%0Abackground%2Dcolor%3A%20%23b52a1d%3B%0Acolor%3A%20%23f8f8f8%3B%0A%7D%0A%2Epl%2Dsr%20%2Epl%2Dcce%20%7B%0Acolor%3A%20%2363a35c%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0A%2Epl%2Dml%20%7B%0Acolor%3A%20%23693a17%3B%0A%7D%0A%2Epl%2Dmh%2C%0A%2Epl%2Dmh%20%2Epl%2Den%2C%0A%2Epl%2Dms%20%7B%0Acolor%3A%20%231d3e81%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0A%2Epl%2Dmq%20%7B%0Acolor%3A%20%23008080%3B%0A%7D%0A%2Epl%2Dmi%20%7B%0Acolor%3A%20%23333%3B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0A%2Epl%2Dmb%20%7B%0Acolor%3A%20%23333%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0A%2Epl%2Dmd%20%7B%0Abackground%2Dcolor%3A%20%23ffecec%3B%0Acolor%3A%20%23bd2c00%3B%0A%7D%0A%2Epl%2Dmi1%20%7B%0Abackground%2Dcolor%3A%20%23eaffea%3B%0Acolor%3A%20%2355a532%3B%0A%7D%0A%2Epl%2Dmdr%20%7B%0Acolor%3A%20%23795da3%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0A%2Epl%2Dmo%20%7B%0Acolor%3A%20%231d3e81%3B%0A%7D%0Akbd%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%3A%203px%205px%3B%0Afont%3A%2011px%20Consolas%2C%20%22Liberation%20Mono%22%2C%20Menlo%2C%20Courier%2C%20monospace%3B%0Aline%2Dheight%3A%2010px%3B%0Acolor%3A%20%23555%3B%0Avertical%2Dalign%3A%20middle%3B%0Abackground%2Dcolor%3A%20%23fcfcfc%3B%0Aborder%3A%20solid%201px%20%23ccc%3B%0Aborder%2Dbottom%2Dcolor%3A%20%23bbb%3B%0Aborder%2Dradius%3A%203px%3B%0Abox%2Dshadow%3A%20inset%200%20%2D1px%200%20%23bbb%3B%0A%7D%0A%2Etask%2Dlist%2Ditem%20%7B%0Alist%2Dstyle%2Dtype%3A%20none%3B%0A%7D%0A%2Etask%2Dlist%2Ditem%2B%2Etask%2Dlist%2Ditem%20%7B%0Amargin%2Dtop%3A%203px%3B%0A%7D%0A%2Etask%2Dlist%2Ditem%20input%20%7B%0Amargin%3A%200%200%2E35em%200%2E25em%20%2D1%2E6em%3B%0Avertical%2Dalign%3A%20middle%3B%0A%7D%0A%3Achecked%2B%2Eradio%2Dlabel%20%7B%0Az%2Dindex%3A%201%3B%0Aposition%3A%20relative%3B%0Aborder%2Dcolor%3A%20%234078c0%3B%0A%7D%0A%2EsourceLine%20%7B%0Adisplay%3A%20inline%2Dblock%3B%0A%7D%0Acode%20%2Ekw%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Edt%20%7B%20color%3A%20%23ed6a43%3B%20%7D%0Acode%20%2Edv%20%7B%20color%3A%20%23009999%3B%20%7D%0Acode%20%2Ebn%20%7B%20color%3A%20%23009999%3B%20%7D%0Acode%20%2Efl%20%7B%20color%3A%20%23009999%3B%20%7D%0Acode%20%2Ech%20%7B%20color%3A%20%23009999%3B%20%7D%0Acode%20%2Est%20%7B%20color%3A%20%23183691%3B%20%7D%0Acode%20%2Eco%20%7B%20color%3A%20%23969896%3B%20%7D%0Acode%20%2Eot%20%7B%20color%3A%20%230086b3%3B%20%7D%0Acode%20%2Eal%20%7B%20color%3A%20%23a61717%3B%20%7D%0Acode%20%2Efu%20%7B%20color%3A%20%2363a35c%3B%20%7D%0Acode%20%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%0Acode%20%2Ewa%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Ecn%20%7B%20color%3A%20%23008080%3B%20%7D%0Acode%20%2Esc%20%7B%20color%3A%20%23008080%3B%20%7D%0Acode%20%2Evs%20%7B%20color%3A%20%23183691%3B%20%7D%0Acode%20%2Ess%20%7B%20color%3A%20%23183691%3B%20%7D%0Acode%20%2Eim%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Eva%20%7Bcolor%3A%20%23008080%3B%20%7D%0Acode%20%2Ecf%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Eop%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Ebu%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Eex%20%7B%20color%3A%20%23000000%3B%20%7D%0Acode%20%2Epp%20%7B%20color%3A%20%23999999%3B%20%7D%0Acode%20%2Eat%20%7B%20color%3A%20%23008080%3B%20%7D%0Acode%20%2Edo%20%7B%20color%3A%20%23969896%3B%20%7D%0Acode%20%2Ean%20%7B%20color%3A%20%23008080%3B%20%7D%0Acode%20%2Ecv%20%7B%20color%3A%20%23008080%3B%20%7D%0Acode%20%2Ein%20%7B%20color%3A%20%23008080%3B%20%7D%0A">
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
 <style>
 body {
-  box-sizing: border-box;
-  min-width: 200px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 45px;
-  padding-top: 0px;
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
 }
 </style>
+
 
 </head>
 
@@ -32,14 +608,22 @@ body {
 
 <!-- badges: end -->
 
-<p>The goal of documentNumbering is to provide figure and table numbering in Rmd output formats that don’t normally provide figure numbers. This package exists as an alternative to the number referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">bookdown package</a>.</p>
+<p>The goal of <code>documentNumbering</code> is to provide figure and
+table numbering in Rmd / qmd output formats that don’t normally provide
+figure numbers. This package exists as an alternative to the number
+referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">bookdown
+package</a>.</p>
 <h2 id="installation">Installation</h2>
 <p>You can currently install from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rmflight/documentNumbering&quot;</span>)</span></code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="r6-object">R6 Object</h3>
-<p>The easiest way to use this is the actual {R6} object, <code>dn_counter</code> that gets updated, and contains all the information for printing, and which you initialize with whatever values you want for a prefix, and a character to use to replace any spaces in the prefix.</p>
+<p>The way to use this is the actual {R6} object,
+<code>dn_counter</code> that gets updated, and contains all the
+information for printing, and which you initialize with whatever values
+you want for a prefix, and a character to use to replace any spaces in
+the prefix.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(documentNumbering)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a normal example in a main manuscript</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>my_counter <span class="ot">=</span> dn_counter<span class="sc">$</span><span class="fu">new</span>(<span class="st">&quot;Figure &quot;</span>, <span class="st">&quot;_&quot;</span>)</span>
@@ -59,7 +643,8 @@ body {
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        count: </span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        names: </span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span></code></pre></div>
-<p>When it is initialized, there are no counts, and no names for the counts.</p>
+<p>When it is initialized, there are no counts, and no names for the
+counts.</p>
 <h3 id="increment-the-count">Increment the Count</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">increment</span>(<span class="st">&quot;descriptive_name&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_counter</span>
@@ -78,73 +663,69 @@ body {
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        count: S1</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        names: </span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;a_name&quot;</span></span></code></pre></div>
-<p>Here we can see that the count now includes a “1”, and In the case of the <code>s_counter</code>, we can now see that the “S” gets added directly to the counter, and the count is actually stored as a character.</p>
+<p>Here we can see that the count now includes a “1”, and In the case of
+the <code>s_counter</code>, we can now see that the “S” gets added
+directly to the counter, and the count is actually stored as a
+character.</p>
+<p>We can also add multiple items at a time:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">increment</span>(<span class="fu">c</span>(<span class="st">&quot;b_name&quot;</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                       <span class="st">&quot;c_name&quot;</span>))</span></code></pre></div>
 <h3 id="paste-in-text">Paste in Text</h3>
 <p>Now we want to refer to it in the text, we can do:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">label_text</span>(<span class="st">&quot;descriptive_name&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Figure 1&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">label_text</span>(<span class="st">&quot;descriptive_name&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Figure 1&quot;</span></span></code></pre></div>
 <h3 id="refer-to-multiple">Refer to Multiple</h3>
 <p>Often we want to refer to multiple figures at once:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add another entry first</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">increment</span>(<span class="st">&quot;descriptive_2&quot;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">label_text</span>(<span class="fu">c</span>(<span class="st">&quot;descriptive_name&quot;</span>, <span class="st">&quot;descriptive_2&quot;</span>))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Figures 1, 2&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add another entry first</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">increment</span>(<span class="st">&quot;descriptive_2&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">label_text</span>(<span class="fu">c</span>(<span class="st">&quot;descriptive_name&quot;</span>, <span class="st">&quot;descriptive_2&quot;</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Figures 1-4&quot;</span></span></code></pre></div>
 <h3 id="change-name">Change Name</h3>
-<p>If we’ve supplied the incorrect name, we can change it if you really want (I doubt this comes up much, but it’s there).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">rename</span>(<span class="st">&quot;descriptive_name&quot;</span>, <span class="st">&quot;descriptive_1&quot;</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>my_counter</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   dn_counter: </span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       prefix: Figure </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; file_replace: Figure_</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        count: 1, 2</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        names: </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;descriptive_1&quot; &quot;descriptive_2&quot;</span></span></code></pre></div>
+<p>If we’ve supplied the incorrect name, we can change it if you really
+want (I doubt this comes up much, but it’s there).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_counter<span class="sc">$</span><span class="fu">rename</span>(<span class="st">&quot;descriptive_name&quot;</span>, <span class="st">&quot;descriptive_1&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my_counter</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   dn_counter: </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       prefix: Figure </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; file_replace: Figure_</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        count: 1, 2, 3, 4</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        names: </span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;descriptive_1&quot; &quot;b_name&quot;        &quot;c_name&quot;        &quot;descriptive_2&quot;</span></span></code></pre></div>
 <h3 id="file-paths">File Paths</h3>
-<p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.process =</span> dn_modify_path)</span></code></pre></div>
-<p>And then to rename the figure file, you set the chunk <strong>name</strong> to be the same as the figure number you want to access:</p>
-<pre><code>```{r descriptive_1, dn_id = my_counter$} r` &#39;&#39;`
+<p>In addition to just using the counter, there is the ability to modify
+the file names of the figures generated. This is particularly useful if
+you are creating figure files for a manuscript. If you set
+<code>keep_md: true</code> in the yaml header, and then you can add a
+custom figure processor, <code>modify_path</code>, which is one of the
+functions in the <code>dn_counter</code> object you instantiate:</p>
+<p>For <code>rmarkdown</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<p>For <code>quarto</code>:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>figure_count <span class="ot">=</span> dn_counter<span class="sc">$</span><span class="fu">new</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.process =</span> figure_count<span class="sc">$</span>modify_path)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>figure_count<span class="sc">$</span><span class="fu">increment</span>(<span class="fu">c</span>(<span class="st">&quot;plot&quot;</span>, <span class="st">&quot;plot2&quot;</span>))</span></code></pre></div>
+<p>And then to rename the figure file, you set the chunk
+<strong>label</strong> to be the same as the figure number you want to
+access:</p>
+<pre><code>```r
 plot(rnorm(100), rnorm(100))
-```</code></pre>
-<p>The figure file will be prepended with <code>Figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
-<p>Alternatively, if you want a different name for the chunk , you can name the chunk whatever and then provide the id using <code>label_text()</code> to <code>dn_id</code>.</p>
-<pre><code>```{r rnorm_plot, dn_id = my_counter$label_text(&quot;descriptive_1&quot;)} r` &#39;&#39;`
-plot(rnorm(100), rnorm(100))
-```</code></pre>
-<h3 id="traditional-functional-r">Traditional Functional R</h3>
-<p>For basic usage, you initialize any counters you need:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(documentNumbering)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>figure_counts <span class="ot">=</span> <span class="fu">dn_initialize_counter</span>()</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>table_counts <span class="ot">=</span> <span class="fu">dn_initialize_counter</span>()</span></code></pre></div>
-<p>From there, you can add to each one with identifiers, and then subsequently use it to reference it later:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>figure_counts <span class="ot">=</span> <span class="fu">dn_increment_counter</span>(figure_counts, <span class="st">&quot;plot1&quot;</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="fu">rnorm</span>(<span class="dv">100</span>))</span></code></pre></div>
-<img src="data:image/png;base64,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" width="100%" />
+```
 
-<p>And now you can refer to it in the text:</p>
-<p><code>r dn_figure_string(figure_counts, &quot;plot1&quot;)</code>. Shows the result of plotting a random normal.</p>
-<p>Figure 1. Shows the result of plotting a random normal.</p>
-<p>For table numbers, you can use <code>dn_table_string</code>.</p>
-<p>Both <code>dn_table_string</code> and <code>dn_figure_string</code> are wrappers around the more general <code>dn_paste_counter</code>, where you can supply any text you want:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dn_paste_counter</span>(figure_counts, <span class="st">&quot;Whoa &quot;</span>, <span class="st">&quot;plot1&quot;</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Whoa 1&quot;</span></span></code></pre></div>
-<h3 id="disadvantage">Disadvantage</h3>
-<p>You need to define the counter identifier before it can be used. That can be annoying, but in practice it’s not too bad.</p>
-<h3 id="modifying-figure-names">Modifying Figure Names</h3>
-<p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">fig.processor =</span> dn_modify_path)</span></code></pre></div>
-<p>And then to rename the figure file, you set a custom chunk option, <code>dn_id</code>:</p>
-<pre><code>```{r rename_chunk, dn_id = dn_figure_rename(figure_counts, &quot;plot1&quot;)}
+&lt;img src=&quot;man/figures/Figure_1-README-plot-1.png&quot; width=&quot;100%&quot; /&gt;</code></pre>
+<p>Alternatively:</p>
+<pre><code>```r
 plot(rnorm(100), rnorm(100))
-```</code></pre>
-<p>The figure file will be prepended with <code>Figure_1_</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
+```
+
+&lt;img src=&quot;man/figures/Figure_2-README-plot2-1.png&quot; width=&quot;100%&quot; /&gt;</code></pre>
+<p>The figure file will be prepended with <code>Figure_1-</code> in the
+output directory that is generated, which makes it much easier to refer
+to when uploading files or sharing them with collaborators.</p>
 
 </body>
 </html>

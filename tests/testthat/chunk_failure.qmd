@@ -1,8 +1,8 @@
 ---
 title: "test failure"
 output_format:
-  md_document:
-    keep_md: true
+  html:
+    keep-md: true
 editor_options: 
   chunk_output_type: console
 ---

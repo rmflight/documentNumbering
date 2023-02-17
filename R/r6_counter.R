@@ -29,6 +29,9 @@
 #' \code{dn_counter$rename("old_name", "new_name")} replaces the names on the count
 #'   object so that you can refer to the correct one.
 #'
+#' \code{dn_counter$modify_path(oldpath, label)} generates a new path filename that incorporates the figure number.
+#'   This is most useful with `knitr::opts_chunk$set(fig.process = my_counter$modify_path)`.
+#'
 #' \code{dn_counter} displays the prefix, file replacement text, the current set of
 #'   counts, and their names.
 #'
@@ -103,6 +106,21 @@ dn_counter = R6::R6Class("dn_counter", list(
     }
     use_text = paste(self$file_replace, name_number, sep = "")
     return(use_text)
+  },
+  modify_path = function(path, label) {
+    out_file = try(self$label_file(label))
+    if (inherits(out_file, "try-error")) {
+      return(path)
+    } else {
+      org_dir = dirname(path)
+      file_name = basename(path)
+
+      new_name = paste0(out_file, "-", file_name)
+      new_file = file.path(org_dir, new_name)
+      #print(new_file)
+      file.rename(path, new_file)
+      return(new_file)
+    }
   },
   just_count = function(name = NULL) {
     if (!any(name %in% names(self$count))) {

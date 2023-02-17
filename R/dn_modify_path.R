@@ -14,7 +14,7 @@
 #' @export
 #' @return character
 dn_modify_path = function(figure_path, options){
-  #cat(names(options), sep = "\n")
+  cat(names(options), sep = "\n")
   if (any(grepl("dn_id", names(options)))) {
     tmp_id = options[["dn_id"]]
     if (inherits(tmp_id, "character")) {

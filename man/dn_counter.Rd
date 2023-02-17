@@ -36,6 +36,9 @@ a file name, "Figure_1" as an example.
 \code{dn_counter$rename("old_name", "new_name")} replaces the names on the count
 object so that you can refer to the correct one.
 
+\code{dn_counter$modify_path(oldpath, label)} generates a new path filename that incorporates the figure number.
+This is most useful with \code{knitr::opts_chunk$set(fig.process = my_counter$modify_path)}.
+
 \code{dn_counter} displays the prefix, file replacement text, the current set of
 counts, and their names.
 }

@@ -1,8 +1,8 @@
 ---
 title: "test success"
 output_format:
-  html_document:
-    keep_md: true
+  html:
+    keep-md: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -11,19 +11,18 @@ editor_options:
 #| label: setup
 library(documentNumbering)
 figure_count = dn_counter$new()
-
 knitr::opts_chunk$set(fig.process = figure_count$modify_path)
 
 figure_count = figure_count$increment("testfigure")
 figure_count = figure_count$increment("test2")
 ```
 
-```{r} 
+```{r}
 #| label: testfigure
 plot(rnorm(100), rnorm(100))
 ```
 
-```{r} 
+```{r}
 #| label: test2
 plot(rnorm(100), rnorm(100))
 ```
