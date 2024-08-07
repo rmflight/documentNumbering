@@ -17,6 +17,7 @@ It has the following arguments:
 \item{space_fill}{The character to use to replace " " if using the prefix as
 part of a file name.}
 \item{prefix2}{A second prefix to add, if you need "S" for supplemental, for example.}
+\item{link}{"yes" or "no". Default is "no".}
 }
 }
 
@@ -27,6 +28,8 @@ increases the count and adds the name to the count for recall later.
 
 \code{dn_counter$label_text("name")} returns a text string for use in text,
 "Figure 1" for example.
+
+\code{dn_counter$label_caption("name")} returns a text string to use in a caption.
 
 \code{dn_counter$just_count("name")} returns just the count as a string, with {prefix2} if it was supplied.
 

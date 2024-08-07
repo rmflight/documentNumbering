@@ -12,6 +12,7 @@
 #'   \item{space_fill}{The character to use to replace " " if using the prefix as
 #'   part of a file name.}
 #'   \item{prefix2}{A second prefix to add, if you need "S" for supplemental, for example.}
+#'   \item{link}{"yes" or "no". Default is "no".}
 #' }
 #'
 #' @section Using the counter:
@@ -20,6 +21,8 @@
 #'
 #' \code{dn_counter$label_text("name")} returns a text string for use in text,
 #'   "Figure 1" for example.
+#'
+#' \code{dn_counter$label_caption("name")} returns a text string to use in a caption.
 #'
 #' \code{dn_counter$just_count("name")} returns just the count as a string, with {prefix2} if it was supplied.
 #'
@@ -94,8 +97,37 @@ dn_counter = R6::R6Class("dn_counter", list(
     }
     use_text = paste(tmp_prefix, str_numbers, sep = "")
 
+    if ((self$link %in% "yes") & (length(name_number) == 1)) {
+      use_text = paste('<a href="#', name, '">', use_text, '</a>', sep = "")
+    }
+
     return(use_text)
   },
+
+  label_caption = function(name = NULL) {
+    if (is.null(name)) {
+      stop(paste0('name cannot be NULL!'))
+    }
+    if (length(name) > 1) {
+      stop(paste('Only one \'name\' can be passed for labeling captions!'))
+    }
+    if (!any(name %in% names(self$count))) {
+      stop(paste0('name "', name, '" not found!'))
+    }
+    name_loc = which(names(self$count) %in% name)
+
+    name_number = self$count[name_loc]
+    tmp_prefix = self$prefix
+
+    use_text = paste(tmp_prefix, name_number, sep = "")
+
+    if ((self$link %in% "yes")) {
+      use_text = paste('<id="', name, '">', use_text, sep = "")
+    }
+
+    return(use_text)
+  },
+
   label_file = function(name = NULL) {
     if (!any(name %in% names(self$count))) {
       stop(paste0('name "', name, '" not found!'))
@@ -132,6 +164,7 @@ dn_counter = R6::R6Class("dn_counter", list(
   print = function(...) {
     cat("  dn_counter: \n")
     cat("      prefix: ", self$prefix, "\n", sep = "")
+    cat("        link: ", self$link, "\n", sep = "")
     cat("file_replace: ", self$file_replace, "\n", sep = "")
     cat("       count: ", paste0(self$count, collapse = ", "), "\n", sep = "")
     cat("       names: \n")
@@ -140,14 +173,17 @@ dn_counter = R6::R6Class("dn_counter", list(
   },
   prefix = "",
   prefix2 = "",
+  link = "",
   file_replace = NULL,
 
   initialize = function(prefix = "Figure ",
                         space_fill = "_",
-                        prefix2 = "") {
+                        prefix2 = "",
+                        link = "no") {
     self$prefix = prefix
     self$prefix2 = prefix2
     self$file_replace = gsub(" ", space_fill, prefix)
+    self$link = link
     invisible(self)
   }
 ))
