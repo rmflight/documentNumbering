@@ -122,7 +122,7 @@ dn_counter = R6::R6Class("dn_counter", list(
     use_text = paste(tmp_prefix, name_number, sep = "")
 
     if ((self$link %in% "yes")) {
-      use_text = paste('<a id="', name, '">', use_text, sep = "</a>")
+      use_text = paste('<a id="', name, '">', use_text, '</a>', sep = "")
     }
 
     return(use_text)
