@@ -10,8 +10,8 @@
   Rmd -&gt; Word as one example where there normally isnt any automatic figure numbering.">
 <title>Functions for Numbering in Documents • documentNumbering</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Functions for Numbering in Documents">
 <meta property="og:description" content="Provides a framework for numbering in Rmd and other files where
@@ -30,7 +30,7 @@
     
     <a class="navbar-brand me-2" href="index.html">documentNumbering</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of <code>documentNumbering</code> is to provide figure and table numbering in Rmd / qmd output formats that don’t normally provide figure numbers. This package exists as an alternative to the number referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html" class="external-link">bookdown package</a>.</p>
+<p>The goal of <code>documentNumbering</code> is to provide figure and table numbering in Rmd / qmd output formats that don’t normally provide figure numbers. This package exists as an alternative to the number referencing provided by the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html" class="external-link">bookdown package</a> as well as those provided by <code>quarto</code>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -92,6 +92,7 @@
 <span><span class="va">my_counter</span></span>
 <span><span class="co">#&gt;   dn_counter: </span></span>
 <span><span class="co">#&gt;       prefix: Figure </span></span>
+<span><span class="co">#&gt;         link: no</span></span>
 <span><span class="co">#&gt; file_replace: Figure_</span></span>
 <span><span class="co">#&gt;        count: </span></span>
 <span><span class="co">#&gt;        names: </span></span>
@@ -101,6 +102,7 @@
 <span><span class="va">s_counter</span></span>
 <span><span class="co">#&gt;   dn_counter: </span></span>
 <span><span class="co">#&gt;       prefix: Figure </span></span>
+<span><span class="co">#&gt;         link: no</span></span>
 <span><span class="co">#&gt; file_replace: Figure_</span></span>
 <span><span class="co">#&gt;        count: </span></span>
 <span><span class="co">#&gt;        names: </span></span>
@@ -115,6 +117,7 @@
 <span><span class="va">my_counter</span></span>
 <span><span class="co">#&gt;   dn_counter: </span></span>
 <span><span class="co">#&gt;       prefix: Figure </span></span>
+<span><span class="co">#&gt;         link: no</span></span>
 <span><span class="co">#&gt; file_replace: Figure_</span></span>
 <span><span class="co">#&gt;        count: 1</span></span>
 <span><span class="co">#&gt;        names: </span></span>
@@ -124,6 +127,7 @@
 <span><span class="va">s_counter</span></span>
 <span><span class="co">#&gt;   dn_counter: </span></span>
 <span><span class="co">#&gt;       prefix: Figure </span></span>
+<span><span class="co">#&gt;         link: no</span></span>
 <span><span class="co">#&gt; file_replace: Figure_</span></span>
 <span><span class="co">#&gt;        count: S1</span></span>
 <span><span class="co">#&gt;        names: </span></span>
@@ -161,37 +165,52 @@
 <span><span class="va">my_counter</span></span>
 <span><span class="co">#&gt;   dn_counter: </span></span>
 <span><span class="co">#&gt;       prefix: Figure </span></span>
+<span><span class="co">#&gt;         link: no</span></span>
 <span><span class="co">#&gt; file_replace: Figure_</span></span>
 <span><span class="co">#&gt;        count: 1, 2, 3, 4</span></span>
 <span><span class="co">#&gt;        names: </span></span>
 <span><span class="co">#&gt; [1] "descriptive_1" "b_name"        "c_name"        "descriptive_2"</span></span></code></pre></div>
 </div>
 <div class="section level3">
+<h3 id="links-between-text-and-caption">Links Between Text and Caption<a class="anchor" aria-label="anchor" href="#links-between-text-and-caption"></a>
+</h3>
+<p>When generating both HTML and Word output, you often want links to be available between items in the HTML output. You can control whether link text is input with the <code>link</code> option, and then label text with <code>label_text</code> and captions with <code>label_caption</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">link_counter</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"Figure "</span>, link <span class="op">=</span> <span class="st">"yes"</span><span class="op">)</span></span>
+<span><span class="va">link_counter</span><span class="op">$</span><span class="fu">increment</span><span class="op">(</span><span class="st">"a-name"</span><span class="op">)</span></span>
+<span><span class="va">link_counter</span><span class="op">$</span><span class="fu">label_text</span><span class="op">(</span><span class="st">"a-name"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "&lt;a href=\"#a-name\"&gt;Figure 1&lt;/a&gt;"</span></span>
+<span><span class="va">link_counter</span><span class="op">$</span><span class="fu">label_caption</span><span class="op">(</span><span class="st">"a-name"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "&lt;a id=\"a-name\"&gt;Figure 1&lt;/a&gt;"</span></span></code></pre></div>
+<p>There is something to note, if you are using quarto documents, you cannot use chunk labels that start with <code>fig</code> or <code>tbl</code>, because then they will require <code>fig-cap</code> and <code>tbl-cap</code>. However, you can use labels that start with <code>figure</code> and <code>table</code> so they are easier to see in an outline list.</p>
+<p>One limitation of having linking, is the inability to label multiples, currently. This may or may not be fixed eventually, but it will require a bunch more logic to the <code>label_text</code> function.</p>
+</div>
+<div class="section level3">
 <h3 id="file-paths">File Paths<a class="anchor" aria-label="anchor" href="#file-paths"></a>
 </h3>
 <p>In addition to just using the counter, there is the ability to modify the file names of the figures generated. This is particularly useful if you are creating figure files for a manuscript. If you set <code>keep_md: true</code> in the yaml header, and then you can add a custom figure processor, <code>modify_path</code>, which is one of the functions in the <code>dn_counter</code> object you instantiate:</p>
 <p>For <code>rmarkdown</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="at">  </span><span class="fu">word_document</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <p>For <code>quarto</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-md</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">figure_count</span> <span class="op">=</span> <span class="va"><a href="reference/dn_counter.html">dn_counter</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>fig.process <span class="op">=</span> <span class="va">figure_count</span><span class="op">$</span><span class="va">modify_path</span><span class="op">)</span></span>
 <span><span class="va">figure_count</span><span class="op">$</span><span class="fu">increment</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"plot"</span>, <span class="st">"plot2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>And then to rename the figure file, you set the chunk <strong>label</strong> to be the same as the figure number you want to access:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: plot</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">plot(rnorm(100), rnorm(100))</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="in">#| label: plot</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="in">plot(rnorm(100), rnorm(100))</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p><img src="reference/figures/Figure_1-README-plot-1.png" style="width:100.0%"></p>
 <p>Alternatively:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot2}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">plot(rnorm(100), rnorm(100))</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="in">```{r plot2}</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="in">plot(rnorm(100), rnorm(100))</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p><img src="reference/figures/Figure_2-README-plot2-1.png" style="width:100.0%"></p>
 <p>The figure file will be prepended with <code>Figure_1-</code> in the output directory that is generated, which makes it much easier to refer to when uploading files or sharing them with collaborators.</p>
 </div>

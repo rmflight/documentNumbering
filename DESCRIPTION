@@ -1,7 +1,7 @@
 Package: documentNumbering
 Type: Package
 Title: Functions for Numbering in Documents
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(person(given = c("Robert", "M"), family = "Flight", email
         = "rflight79@gmail.com", role = c("aut", "cre")))
 Description: Provides a framework for numbering in Rmd and other files where
@@ -9,13 +9,12 @@ Description: Provides a framework for numbering in Rmd and other files where
   Rmd -> Word as one example where there normally isn't any automatic figure numbering.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 URL: 
     https://rmflight.github.io/documentNumbering
     https://github.com/rmflight/documentNumbering
 BugReports: https://github.com/rmflight/documentNumbering/issues
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2
 Suggests: 
     knitr,
     rmarkdown,
