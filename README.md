@@ -1,4 +1,5 @@
 
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # documentNumbering
@@ -10,7 +11,8 @@ The goal of `documentNumbering` is to provide figure and table numbering
 in Rmd / qmd output formats that don’t normally provide figure numbers.
 This package exists as an alternative to the number referencing provided
 by the [bookdown
-package](https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html).
+package](https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)
+as well as those provided by `quarto`.
 
 ## Installation
 
@@ -37,6 +39,7 @@ my_counter = dn_counter$new("Figure ", "_")
 my_counter
 #>   dn_counter: 
 #>       prefix: Figure 
+#>         link: no
 #> file_replace: Figure_
 #>        count: 
 #>        names: 
@@ -46,6 +49,7 @@ s_counter = dn_counter$new("Figure ", "_", "S")
 s_counter
 #>   dn_counter: 
 #>       prefix: Figure 
+#>         link: no
 #> file_replace: Figure_
 #>        count: 
 #>        names: 
@@ -62,6 +66,7 @@ my_counter$increment("descriptive_name")
 my_counter
 #>   dn_counter: 
 #>       prefix: Figure 
+#>         link: no
 #> file_replace: Figure_
 #>        count: 1
 #>        names: 
@@ -71,6 +76,7 @@ s_counter$increment("a_name")
 s_counter
 #>   dn_counter: 
 #>       prefix: Figure 
+#>         link: no
 #> file_replace: Figure_
 #>        count: S1
 #>        names: 
@@ -118,11 +124,38 @@ my_counter$rename("descriptive_name", "descriptive_1")
 my_counter
 #>   dn_counter: 
 #>       prefix: Figure 
+#>         link: no
 #> file_replace: Figure_
 #>        count: 1, 2, 3, 4
 #>        names: 
 #> [1] "descriptive_1" "b_name"        "c_name"        "descriptive_2"
 ```
+
+### Links Between Text and Caption
+
+When generating both HTML and Word output, you often want links to be
+available between items in the HTML output. You can control whether link
+text is input with the `link` option, and then label text with
+`label_text` and captions with `label_caption`.
+
+``` r
+link_counter = dn_counter$new("Figure ", link = "yes")
+link_counter$increment("a-name")
+link_counter$label_text("a-name")
+#> [1] "<a href=\"#a-name\">Figure 1</a>"
+link_counter$label_caption("a-name")
+#> [1] "<a id=\"a-name\">Figure 1</a>"
+```
+
+There is something to note, if you are using quarto documents, you
+cannot use chunk labels that start with `fig` or `tbl`, because then
+they will require `fig-cap` and `tbl-cap`. However, you can use labels
+that start with `figure` and `table` so they are easier to see in an
+outline list.
+
+One limitation of having linking, is the inability to label multiples,
+currently. This may or may not be fixed eventually, but it will require
+a bunch more logic to the `label_text` function.
 
 ### File Paths
 

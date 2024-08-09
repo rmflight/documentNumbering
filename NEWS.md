@@ -1,3 +1,8 @@
+# documentNumbering 0.2.0
+
+* Adds a new argument to the R6 object, `link`. Passing "yes" tells the object to add internal link code to the caption.
+* It also adds a new function, `label_caption`, to label captions and allow the text label to link to it.
+
 # documentNumbering 0.1.0
 
 * Big change for renaming files. Instead of using the `dn_modify_path` as the argument for `fig.process`, the counter R6 object has a new function, `modify_path` that should be used, and only uses the chunk label to identify the renaming. See the updated README for the example.

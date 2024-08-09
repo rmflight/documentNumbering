@@ -30,4 +30,13 @@ test_that("r6 counter works", {
   t2_count$increment("t2")
   expect_equal(t2_count$label_text("t1"), "Figure S1")
   expect_equal(t2_count$label_file("t1"), "Figure_S1")
+
+  expect_equal(t2_count$label_caption("t1"), "Figure S1")
+
+  f_count_link = dn_counter$new("F ", link = "yes")
+  f_count_link$increment("f1")
+  expect_equal(f_count_link$label_text("f1"), "<a href=\"#f1\">F 1</a>")
+  expect_equal(f_count_link$label_caption("f1"), "<a id=\"f1\">F 1</a>")
+
 })
+
